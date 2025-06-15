@@ -1,1 +1,8 @@
+# Ignore the dataset folder
 License-Plate-Recognition-11/
+# Ignore the runs folder
+runs/
+
+# ignore any file that starts with yolo
+yolo*
+
