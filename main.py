@@ -3,7 +3,7 @@ from roboflow import Roboflow
 from ultralytics import YOLO
 
 # === CONFIGURATION ===
-ROBOFLOW_API_KEY = "your_actual_api_key"
+ROBOFLOW_API_KEY = "eifZWS53J7x5kD1drknb"
 WORKSPACE = "roboflow-universe-projects"
 PROJECT = "license-plate-recognition-rxg4e"
 VERSION = 11
@@ -37,4 +37,4 @@ def train_model():
 # === MAIN EXECUTION ===
 if __name__ == "__main__":
     dataset_path = download_dataset()
-    train_model(dataset_path)
+    # train_model(dataset_path)
