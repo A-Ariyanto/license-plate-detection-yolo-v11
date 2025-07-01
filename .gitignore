@@ -6,3 +6,5 @@ runs/
 # ignore any file that starts with yolo
 yolo*
 
+# ignore any . files
+.DS_Store
