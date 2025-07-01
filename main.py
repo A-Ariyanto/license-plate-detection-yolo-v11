@@ -30,18 +30,17 @@ def download_dataset():
 
 # === STEP 2: TRAIN THE YOLO MODEL ===
 def train_model():
-    
-    
-    # Using and prexisting model
-    print("Using pre-existing YOLOv11 model...")
-    model = YOLO("yolo11n.pt")
-    
-    # Pure training
-    # print("Training YOLOv11 model...")
-    # model = YOLO("yolo11n.yaml")
-    # results = model.train(data=DATA_YAML_PATH, epochs=3)
-    # results = model.val()
+    print("Training YOLOv11 model...")
+    model = YOLO("yolo11n.yaml")
+    results = model.train(data=DATA_YAML_PATH, epochs=EPOCHS, imgsz=IMAGE_SIZE)
 
+    print("Evaluating model...")
+    results = model.val()
+
+    return results
+
+# === Testing Trained Yolo Model ===
+def test_model(model):
     results = model("demo.mp4", save=True)
     
     
@@ -49,4 +48,5 @@ def train_model():
 # === MAIN EXECUTION ===
 if __name__ == "__main__":
     dataset_path = download_dataset()
-    train_model()
+    model = train_model()
+    test_model(model)
